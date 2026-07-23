@@ -124,15 +124,15 @@ body {
 	animation: marquee 28s linear infinite;
 }
 
-[data-icon='moon'] {
-	display: none;
-}
-
-.dark [data-icon='sun'] {
+[data-icon='sun'] {
 	display: none;
 }
 
 .dark [data-icon='moon'] {
+	display: none;
+}
+
+.dark [data-icon='sun'] {
 	display: inline-flex;
 }
 
