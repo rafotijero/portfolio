@@ -15,7 +15,7 @@ export const experience: ExperienceEntry[] = [
 		company: 'Contraloría General de la República (CGR)',
 		period: 'nov. 2023 — actualidad',
 		summary:
-			'Formo parte del equipo que diseña y construye Control 360+, el sistema integrado de servicios de control gubernamental. Contribuyo a los lineamientos técnicos y estándares de desarrollo del equipo, y evalúo nuevas herramientas para modernizar los servicios digitales de la institución.',
+			'Formo parte del equipo que diseña y construye Control 360+, el sistema integrado de servicios de control gubernamental, con microservicios en Java y Spring Boot. Contribuyo a los lineamientos técnicos del equipo, coordino en ocasiones a otros programadores para objetivos puntuales, y evalúo nuevas herramientas para modernizar los servicios digitales de la institución.',
 		stack: ['Java', 'Spring Boot', 'Oracle'],
 		logo: '/logos/institutions/cgr.jpg',
 	},
