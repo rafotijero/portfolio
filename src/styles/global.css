@@ -1,0 +1,149 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@font-face {
+	font-family: 'Geist';
+	src: url('/fonts/geist/Geist-Variable.woff2') format('woff2');
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Geist Mono';
+	src: url('/fonts/geist/GeistMono-Variable.woff2') format('woff2');
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@theme {
+	--font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
+	--font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;
+
+	/* Paleta neutra (blanco/negro/gris) — el color vive en los íconos y logos,
+	   no en el tema. Valores por defecto = modo claro; ver .dark más abajo. */
+	--color-bg: #ffffff;
+	--color-fg: #0a0a0a;
+	--color-card: #ffffff;
+	--color-card-fg: #0a0a0a;
+	--color-muted: #f4f4f5;
+	--color-muted-fg: #71717a;
+	--color-border: #e4e4e7;
+	--color-primary: #0a0a0a;
+	--color-primary-fg: #fafafa;
+	--color-accent: #f4f4f5;
+	--color-accent-2: #52525b;
+}
+
+.dark {
+	--color-bg: #0a0a0a;
+	--color-fg: #fafafa;
+	--color-card: #131316;
+	--color-card-fg: #fafafa;
+	--color-muted: #1f1f23;
+	--color-muted-fg: #a1a1aa;
+	--color-border: #27272a;
+	--color-primary: #fafafa;
+	--color-primary-fg: #0a0a0a;
+	--color-accent: #1f1f23;
+	--color-accent-2: #d4d4d8;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--color-bg);
+	color: var(--color-fg);
+	font-family: var(--font-sans);
+	transition:
+		background-color 0.2s ease-out,
+		color 0.2s ease-out;
+}
+
+.text-gradient {
+	color: var(--color-fg);
+}
+
+.prose {
+	--tw-prose-body: var(--color-fg);
+	--tw-prose-headings: var(--color-fg);
+	--tw-prose-lead: var(--color-muted-fg);
+	--tw-prose-links: var(--color-fg);
+	--tw-prose-bold: var(--color-fg);
+	--tw-prose-counters: var(--color-muted-fg);
+	--tw-prose-bullets: var(--color-border);
+	--tw-prose-hr: var(--color-border);
+	--tw-prose-quotes: var(--color-fg);
+	--tw-prose-quote-borders: var(--color-border);
+	--tw-prose-captions: var(--color-muted-fg);
+	--tw-prose-code: var(--color-fg);
+	--tw-prose-pre-code: var(--color-fg);
+	--tw-prose-pre-bg: var(--color-card);
+	--tw-prose-th-borders: var(--color-border);
+	--tw-prose-td-borders: var(--color-border);
+}
+
+/* Entrada suave para secciones al hacer scroll, ver src/scripts/reveal.js */
+.reveal {
+	opacity: 0;
+	transform: translateY(16px);
+	transition:
+		opacity 0.6s ease-out,
+		transform 0.6s ease-out;
+}
+
+.reveal.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+@keyframes fade-up {
+	from {
+		opacity: 0;
+		transform: translateY(16px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes marquee {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+.animate-marquee {
+	animation: marquee 28s linear infinite;
+}
+
+[data-icon='moon'] {
+	display: none;
+}
+
+.dark [data-icon='sun'] {
+	display: none;
+}
+
+.dark [data-icon='moon'] {
+	display: inline-flex;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.reveal {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+
+	.animate-marquee {
+		animation: none;
+	}
+}

@@ -1,0 +1,44 @@
+---
+import { site } from '../data/site';
+
+const navItems = [
+	{ href: '/#sobre-mi', label: 'Sobre mí' },
+	{ href: '/#stack', label: 'Stack' },
+	{ href: '/#experiencia', label: 'Experiencia' },
+	{ href: '/#certificaciones', label: 'Certificaciones' },
+	{ href: '/#proyectos', label: 'Proyectos' },
+	{ href: '/blog', label: 'Blog' },
+	{ href: '/#contacto', label: 'Contacto' },
+];
+---
+
+<header
+	class="sticky top-0 z-50 border-b border-border/60 bg-bg/80 backdrop-blur supports-[backdrop-filter]:bg-bg/60"
+>
+	<div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+		<a href="/" class="font-mono text-sm font-medium tracking-tight text-fg">
+			<span class="text-gradient">&lt;</span>RT<span class="text-gradient">/&gt;</span>
+		</a>
+
+		<nav class="hidden gap-6 md:flex">
+			{
+				navItems.map((item) => (
+					<a
+						href={item.href}
+						class="text-sm text-muted-fg transition-colors hover:text-accent-2"
+					>
+						{item.label}
+					</a>
+				))
+			}
+		</nav>
+
+		<a
+			href={site.cvHref}
+			download
+			class="rounded-md border border-border px-3 py-1.5 text-sm text-fg transition-colors hover:border-accent-2 hover:text-accent-2"
+		>
+			Descargar CV
+		</a>
+	</div>
+</header>

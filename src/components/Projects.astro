@@ -1,0 +1,33 @@
+---
+import { site } from '../data/site';
+---
+
+<section id="proyectos" class="reveal mx-auto max-w-5xl px-6 py-16">
+	<h2 class="font-mono text-sm text-accent-2">05. Proyectos</h2>
+
+	<div
+		class="relative mt-6 overflow-hidden rounded-lg border border-dashed border-border bg-card/50 p-10 text-center"
+	>
+		<div
+			class="pointer-events-none absolute -right-10 -top-16 h-48 w-48 rounded-full bg-fg/5 blur-2xl"
+		>
+		</div>
+		<span class="inline-flex size-10 items-center justify-center rounded-full bg-muted text-lg">
+			🚧
+		</span>
+		<p class="mt-4 font-mono text-xs uppercase tracking-widest text-accent-2">En construcción</p>
+		<p class="mx-auto mt-3 max-w-md text-fg/90">
+			Estoy documentando algunos proyectos propios como case studies —arquitectura,
+			decisiones técnicas, capturas—. Mientras tanto, el código ya está público en mi
+			GitHub.
+		</p>
+		<a
+			href={site.github}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="mt-5 inline-block rounded-md border border-border px-4 py-2 text-sm text-fg transition-colors hover:border-accent-2 hover:text-accent-2"
+		>
+			Ver repositorios en GitHub →
+		</a>
+	</div>
+</section>

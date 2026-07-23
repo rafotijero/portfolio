@@ -1,0 +1,44 @@
+---
+interface Props {
+	name: string;
+	logo?: string;
+	size?: string;
+	class?: string;
+}
+
+const { name, logo, size = 'size-10', class: className = '' } = Astro.props;
+
+const initials = name
+	.split(/\s+/)
+	.filter(Boolean)
+	.slice(0, 2)
+	.map((word) => word[0])
+	.join('')
+	.toUpperCase();
+
+// Color determinístico por nombre, para que el placeholder sea estable entre builds.
+const palette = ['#3b82f6', '#a78bfa', '#38bdf8', '#f472b6', '#34d399', '#fbbf24', '#f87171', '#22d3ee'];
+let hash = 0;
+for (const char of name) hash = (hash * 31 + char.charCodeAt(0)) >>> 0;
+const background = palette[hash % palette.length];
+---
+
+<span class={`relative inline-flex ${size} shrink-0 overflow-hidden rounded-full ring-1 ring-border/60 ${className}`}>
+	<span
+		class="absolute inset-0 flex items-center justify-center font-mono text-xs font-medium text-white"
+		style={{ backgroundColor: background }}
+	>
+		{initials}
+	</span>
+	{
+		logo && (
+			<img
+				src={logo}
+				alt={name}
+				loading="lazy"
+				class="absolute inset-0 h-full w-full bg-white object-contain p-1.5"
+				onerror="this.style.display='none'"
+			/>
+		)
+	}
+</span>

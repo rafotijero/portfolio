@@ -1,0 +1,122 @@
+---
+// Íconos de marca reales (simple-icons) para las tecnologías que sí tienen un
+// logo oficial disponible en el paquete instalado. Los SVG de simple-icons no
+// traen `fill` en el <path> (para que quien los use decida el color), así que
+// inyectamos el hex oficial de cada marca en la etiqueta raíz del SVG.
+import phpSvgRaw from 'simple-icons/icons/php.svg?raw';
+import javascriptSvgRaw from 'simple-icons/icons/javascript.svg?raw';
+import pythonSvgRaw from 'simple-icons/icons/python.svg?raw';
+import springbootSvgRaw from 'simple-icons/icons/springboot.svg?raw';
+import angularSvgRaw from 'simple-icons/icons/angular.svg?raw';
+import mysqlSvgRaw from 'simple-icons/icons/mysql.svg?raw';
+import gitSvgRaw from 'simple-icons/icons/git.svg?raw';
+import githubSvgRaw from 'simple-icons/icons/github.svg?raw';
+import gmailSvgRaw from 'simple-icons/icons/gmail.svg?raw';
+
+function withFill(svg: string, hex: string) {
+	return svg.replace('<svg ', `<svg fill="#${hex}" `);
+}
+
+const brandIcons: Record<string, { svg: string; hex: string }> = {
+	php: { svg: withFill(phpSvgRaw, '777BB4'), hex: '777BB4' },
+	javascript: { svg: withFill(javascriptSvgRaw, 'F7DF1E'), hex: 'F7DF1E' },
+	python: { svg: withFill(pythonSvgRaw, '3776AB'), hex: '3776AB' },
+	springboot: { svg: withFill(springbootSvgRaw, '6DB33F'), hex: '6DB33F' },
+	angular: { svg: withFill(angularSvgRaw, 'DD0031'), hex: 'DD0031' },
+	mysql: { svg: withFill(mysqlSvgRaw, '4479A1'), hex: '4479A1' },
+	git: { svg: withFill(gitSvgRaw, 'F03C2E'), hex: 'F03C2E' },
+	github: { svg: withFill(githubSvgRaw, '181717'), hex: '181717' },
+	gmail: { svg: withFill(gmailSvgRaw, 'EA4335'), hex: 'EA4335' },
+};
+
+// Íconos genéricos dibujados a mano (no son logos de marca) para tecnologías
+// sin ícono oficial en simple-icons (Java pasó a mostrarse solo en negro con
+// OpenJDK; AWS, Oracle, SQL Server y LinkedIn fueron removidos del paquete por
+// reclamos de marca) o que no son marcas registradas (Scrum, PMBOK,
+// arquitectura de software, GWT).
+const genericIcons: Record<string, { color: string; path: string }> = {
+	java: {
+		color: '#e8710a',
+		path: '<path d="M8 15.5c-1 1.5.5 2.5 3.5 2.5s5-.8 5-2c0-.9-1-1.4-1-1.4" stroke-linecap="round" /><path d="M9.5 12c-2.5.4-3.5 1.2-3.5 2 0 1.2 2.2 2 5.5 2 3.7 0 6-.9 6-2.2 0-.7-.7-1.3-1.7-1.7" stroke-linecap="round" /><path d="M10.5 3c-2 1.6-2 3 0 4.5-1.6 1-1.6 2.4 0 3.5" stroke-linecap="round" /><path d="M8.5 19.5c0 .8 1.6 1.5 3.5 1.5s3.5-.7 3.5-1.5" stroke-linecap="round" />',
+	},
+	csharp: {
+		color: '#8a2be2',
+		path: '<path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18" stroke-linecap="round" stroke-linejoin="round" />',
+	},
+	gwt: {
+		color: '#2c9c69',
+		path: '<path d="m8 9-4 3 4 3M16 9l4 3-4 3M13 6l-2 12" stroke-linecap="round" stroke-linejoin="round" />',
+	},
+	sqlserver: {
+		color: '#a41e35',
+		path: '<ellipse cx="12" cy="6" rx="8" ry="2.5" /><path d="M4 6v12c0 1.4 3.58 2.5 8 2.5s8-1.1 8-2.5V6" /><path d="M4 12c0 1.4 3.58 2.5 8 2.5s8-1.1 8-2.5" stroke-linecap="round" stroke-linejoin="round" />',
+	},
+	oracle: {
+		color: '#f80000',
+		path: '<ellipse cx="12" cy="6" rx="8" ry="2.5" /><path d="M4 6v12c0 1.4 3.58 2.5 8 2.5s8-1.1 8-2.5V6" /><path d="M4 12c0 1.4 3.58 2.5 8 2.5s8-1.1 8-2.5" stroke-linecap="round" stroke-linejoin="round" />',
+	},
+	architecture: {
+		color: '#a78bfa',
+		path: '<path d="m12 3 9 5-9 5-9-5 9-5Z" stroke-linejoin="round" /><path d="m3 13 9 5 9-5" stroke-linecap="round" stroke-linejoin="round" />',
+	},
+	aws: {
+		color: '#ff9900',
+		path: '<path d="M7 17a4 4 0 0 1 0-8 5 5 0 0 1 9.6-1.5A4.5 4.5 0 0 1 17 17H7Z" stroke-linecap="round" stroke-linejoin="round" />',
+	},
+	scrum: {
+		color: '#38bdf8',
+		path: '<path d="M20 12a8 8 0 1 1-2.34-5.66" stroke-linecap="round" /><path d="M20 4v4h-4" stroke-linecap="round" stroke-linejoin="round" />',
+	},
+	pmbok: {
+		color: '#94a3b8',
+		path: '<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15Z" stroke-linecap="round" stroke-linejoin="round" /><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20" stroke-linecap="round" stroke-linejoin="round" />',
+	},
+	linkedin: {
+		color: '#0a66c2',
+		path: '<circle cx="8" cy="7" r="1.5" /><path d="M6.6 10.5h2.8v9H6.6z" /><path d="M12 10.5h2.8v1.3c.6-.9 1.6-1.6 3-1.6 2.3 0 3.6 1.5 3.6 4.3v5h-2.8v-4.5c0-1.2-.5-2-1.7-2s-1.9.8-1.9 2v4.5H12z" />',
+	},
+};
+
+interface Props {
+	slug: string;
+	label?: string;
+	class?: string;
+}
+
+const { slug, label, class: className = '' } = Astro.props;
+const brand = brandIcons[slug];
+const generic = genericIcons[slug];
+---
+
+{
+	brand ? (
+		<span
+			class={`inline-flex size-7 shrink-0 items-center justify-center rounded-full p-1.5 shadow-sm ring-1 ring-border/60 [&>svg]:h-full [&>svg]:w-full ${className}`}
+			style={{ backgroundColor: `#${brand.hex}1a` }}
+			title={label}
+			set:html={brand.svg}
+		/>
+	) : generic ? (
+		<span
+			class={`inline-flex size-7 shrink-0 items-center justify-center rounded-full p-1 shadow-sm ring-1 ring-border/60 ${className}`}
+			style={{ backgroundColor: `${generic.color}1a`, color: generic.color }}
+			title={label}
+		>
+			<svg
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="1.8"
+				class="h-full w-full"
+				set:html={generic.path}
+			/>
+		</span>
+	) : (
+		<span
+			class={`inline-flex size-7 shrink-0 items-center justify-center rounded-full bg-muted font-mono text-[10px] text-muted-fg ring-1 ring-border/60 ${className}`}
+			title={label}
+		>
+			{label?.slice(0, 2).toUpperCase()}
+		</span>
+	)
+}

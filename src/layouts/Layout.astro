@@ -1,0 +1,62 @@
+---
+import '../styles/global.css';
+import { site } from '../data/site';
+import Dock from '../components/Dock.astro';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = `${site.name} — ${site.role}`,
+	description = 'Backend Developer Java / Fullstack con más de 10 años de experiencia construyendo sistemas usados a escala nacional. Spring Boot, Angular, AWS.',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<script is:inline>
+			// Se ejecuta antes del primer paint para evitar el flash de tema incorrecto.
+			(function () {
+				try {
+					var stored = localStorage.getItem('theme');
+					var isDark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+					document.documentElement.classList.toggle('dark', isDark);
+					document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+				} catch (e) {}
+			})();
+		</script>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="canonical" href={canonicalURL} />
+
+		<link rel="preload" as="font" type="font/woff2" href="/fonts/geist/Geist-Variable.woff2" crossorigin />
+		<link rel="preload" as="font" type="font/woff2" href="/fonts/geist/GeistMono-Variable.woff2" crossorigin />
+
+		<title>{title}</title>
+		<meta name="description" content={description} />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+	</head>
+	<body class="min-h-screen pb-24 antialiased">
+		<slot />
+		<Dock />
+		<script>
+			import '../scripts/reveal.js';
+			import '../scripts/theme.js';
+		</script>
+	</body>
+</html>
