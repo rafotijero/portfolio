@@ -46,11 +46,16 @@ export const skills: SkillGroup[] = [
 
 // Permite reutilizar el mismo ícono por nombre de tecnología en otras
 // secciones (p. ej. el stack de cada experiencia laboral).
-export const techIconMap: Record<string, string> = Object.fromEntries(
-	skills.flatMap((group) =>
-		group.items.filter((item) => item.icon).map((item) => [item.name, item.icon as string]),
+export const techIconMap: Record<string, string> = {
+	...Object.fromEntries(
+		skills.flatMap((group) =>
+			group.items.filter((item) => item.icon).map((item) => [item.name, item.icon as string]),
+		),
 	),
-);
+	// React no es un skill principal (uso puntual, no en "02. Stack técnico"),
+	// pero sí necesita ícono para la tarjeta de experiencia donde se menciona.
+	React: 'react',
+};
 
 export const languages = [
 	{ name: 'Español', level: 'Nativo' },
