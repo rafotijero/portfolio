@@ -33,8 +33,8 @@ export const experience: ExperienceEntry[] = [
 		company: 'Dirección Desconcentrada de Cultura, Cusco — Ministerio de Cultura',
 		period: 'dic. 2016 — nov. 2019',
 		summary:
-			'Mantuve operativos los módulos informáticos de la DDC-Cusco, incluidos los del santuario histórico de Machupicchu, y di soporte a los sistemas de información y bases de datos institucionales.',
-		stack: ['Java', 'SQL Server', 'Angular'],
+			'Mantuve operativos los módulos informáticos de la DDC-Cusco, incluidos los del santuario histórico de Machupicchu, con desarrollo backend en Java y GWT, además de correcciones puntuales en Angular y React. Di soporte a los sistemas de información y bases de datos institucionales.',
+		stack: ['Java', 'GWT', 'SQL Server', 'Angular', 'React'],
 		logo: '/logos/institutions/ministerio-cultura.png',
 	},
 	{
