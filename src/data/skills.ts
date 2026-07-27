@@ -55,6 +55,9 @@ export const techIconMap: Record<string, string> = {
 	// React no es un skill principal (uso puntual, no en "02. Stack técnico"),
 	// pero sí necesita ícono para la tarjeta de experiencia donde se menciona.
 	React: 'react',
+	CodeIgniter: 'codeigniter',
+	Bootstrap: 'bootstrap',
+	jQuery: 'jquery',
 };
 
 export const languages = [

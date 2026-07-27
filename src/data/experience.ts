@@ -51,8 +51,8 @@ export const experience: ExperienceEntry[] = [
 		company: 'Corporación Khipu S.A.C.',
 		period: 'ene. 2015 — abr. 2016',
 		summary:
-			'Construí en C# los sistemas internos del Instituto Khipu y la Universidad Global (Intranet, KhipuEduca, EduGlobal), y mantuve los portales institucionales en PHP, HTML5 y CSS3.',
-		stack: ['C#', 'PHP', 'JavaScript'],
+			'Construí en C# los sistemas internos del Instituto Khipu y la Universidad Global (Intranet, KhipuEduca, EduGlobal), y mantuve los portales institucionales en PHP con CodeIgniter, Bootstrap y jQuery.',
+		stack: ['C#', 'PHP', 'CodeIgniter', 'Bootstrap', 'jQuery', 'JavaScript'],
 		logo: '/logos/institutions/khipu.png',
 	},
 	{
