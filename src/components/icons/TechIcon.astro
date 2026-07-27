@@ -18,7 +18,11 @@ import githubSvgRaw from 'simple-icons/icons/github.svg?raw';
 import gmailSvgRaw from 'simple-icons/icons/gmail.svg?raw';
 
 function withFill(svg: string, hex: string) {
-	return svg.replace('<svg ', `<svg fill="#${hex}" `);
+	// simple-icons trae un <title> embebido (ej. "PHP") dentro del propio SVG.
+	// El label visible de al lado ya cumple ese rol de nombre accesible, así
+	// que lo quitamos para evitar que un lector de pantalla anuncie "PHP PHP".
+	const withoutTitle = svg.replace(/<title>.*?<\/title>/, '');
+	return withoutTitle.replace('<svg ', `<svg aria-hidden="true" fill="#${hex}" `);
 }
 
 const brandIcons: Record<string, { svg: string; hex: string }> = {

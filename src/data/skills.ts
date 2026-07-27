@@ -21,7 +21,6 @@ export const skills: SkillGroup[] = [
 		items: [
 			{ name: 'Spring Boot', icon: 'springboot' },
 			{ name: 'Angular', icon: 'angular' },
-			{ name: 'GWT', icon: 'gwt' },
 		],
 	},
 	{
@@ -52,12 +51,14 @@ export const techIconMap: Record<string, string> = {
 			group.items.filter((item) => item.icon).map((item) => [item.name, item.icon as string]),
 		),
 	),
-	// React no es un skill principal (uso puntual, no en "02. Stack técnico"),
-	// pero sí necesita ícono para la tarjeta de experiencia donde se menciona.
+	// Estas tecnologías no son skills principales hoy (históricas o de uso
+	// puntual, no en "02. Stack técnico"), pero sí necesitan ícono para las
+	// tarjetas de experiencia donde se mencionan.
 	React: 'react',
 	CodeIgniter: 'codeigniter',
 	Bootstrap: 'bootstrap',
 	jQuery: 'jquery',
+	GWT: 'gwt',
 };
 
 export const languages = [
