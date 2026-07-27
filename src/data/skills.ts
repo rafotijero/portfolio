@@ -60,9 +60,3 @@ export const techIconMap: Record<string, string> = {
 	jQuery: 'jquery',
 	GWT: 'gwt',
 };
-
-export const languages = [
-	{ name: 'Español', level: 'Nativo' },
-	{ name: 'Inglés', level: 'Básico' },
-	{ name: 'Quechua', level: 'Básico' },
-];
