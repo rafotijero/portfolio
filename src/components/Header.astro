@@ -1,5 +1,6 @@
 ---
 import { site } from '../data/site';
+import Logo from './Logo.astro';
 
 const navItems = [
 	{ href: '/#sobre-mi', label: 'Sobre mí' },
@@ -16,9 +17,7 @@ const navItems = [
 	class="sticky top-0 z-50 border-b border-border/60 bg-bg/80 backdrop-blur supports-[backdrop-filter]:bg-bg/60"
 >
 	<div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-		<a href="/" class="font-mono text-sm font-medium tracking-tight text-fg">
-			<span class="text-gradient">&lt;</span>RT<span class="text-gradient">/&gt;</span>
-		</a>
+		<Logo />
 
 		<nav class="hidden gap-6 md:flex">
 			{
