@@ -1,6 +1,6 @@
 export const site = {
 	name: 'Rafael Tijero Fuentes',
-	role: 'Backend Developer Java · Spring Boot · Fullstack',
+	role: 'Backend Developer Java · Spring Boot',
 	tagline:
 		'Desarrollador de software hace más de 10 años. Actualmente formo parte del equipo que construye Control 360+ en la Contraloría General de la República.',
 	location: 'Lima, Perú',
