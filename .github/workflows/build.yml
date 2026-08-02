@@ -18,3 +18,10 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+
+      - name: Deploy to Cloudflare Workers
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

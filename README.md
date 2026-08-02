@@ -15,7 +15,7 @@ src/
 └── styles/
     └── global.css  # Tokens de diseño (colores, tipografía) vía Tailwind v4 @theme
 
-.github/workflows/   # CI: build en cada push/PR (validación, sin deploy configurado aún)
+.github/workflows/   # CI: build en cada push/PR; deploy a Cloudflare Workers en push a main
 public/cv/           # CV descargable (PDF)
 ```
 
@@ -42,5 +42,12 @@ La sección **Proyectos** está a propósito en estado "En construcción"
 
 ## Despliegue
 
-El plan es publicarlo en Cloudflare (dominio + Pages), pendiente de configurar.
-El trabajo pendiente se trackea en los [Issues](../../issues) del repo, no aquí.
+Publicado en Cloudflare Workers (dominio `rafotijero.dev`).
+
+```bash
+npm run deploy    # build + wrangler deploy, manual/local
+```
+
+En CI, cada push a `main` hace deploy automático vía `wrangler-action`
+(requiere los secrets `CLOUDFLARE_API_TOKEN` y `CLOUDFLARE_ACCOUNT_ID` en el
+repo de GitHub).
