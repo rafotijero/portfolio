@@ -10,7 +10,7 @@ interface Props {
 
 const {
 	title = `${site.name} — ${site.role}`,
-	description = 'Backend Developer Java con más de 10 años de experiencia construyendo sistemas usados a escala nacional. Spring Boot, Angular, AWS.',
+	description = site.tagline,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
