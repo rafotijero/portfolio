@@ -13,10 +13,10 @@ export const experience: ExperienceEntry[] = [
 	{
 		role: 'Especialista 2',
 		company: 'Contraloría General de la República (CGR)',
-		period: 'nov. 2023 — actualidad',
+		period: 'nov. 2023 — oct. 2026',
 		summary:
-			'Formo parte del equipo que diseña y construye Control 360+, el sistema integrado de servicios de control gubernamental, con microservicios en Java y Spring Boot. Contribuyo a los lineamientos técnicos del equipo, coordino en ocasiones a otros programadores para objetivos puntuales, y evalúo nuevas herramientas para modernizar los servicios digitales de la institución.',
-		stack: ['Java', 'Spring Boot', 'Oracle'],
+			'Formé parte del equipo que diseñó y construyó Control 360+, el sistema integrado de servicios de control gubernamental, con microservicios en Java, Spring Boot y Spring Cloud Config. Contribuí a los lineamientos técnicos del equipo, coordiné en ocasiones a otros programadores para objetivos puntuales, y evalué nuevas herramientas para modernizar los servicios digitales de la institución.',
+		stack: ['Java', 'Spring Boot', 'Spring Cloud Config', 'Maven', 'Oracle'],
 		logo: '/logos/institutions/cgr.jpg',
 	},
 	{

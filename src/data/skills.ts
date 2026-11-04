@@ -20,7 +20,9 @@ export const skills: SkillGroup[] = [
 		group: 'Frameworks',
 		items: [
 			{ name: 'Spring Boot', icon: 'springboot' },
+			{ name: 'Spring Cloud Config', icon: 'springboot' },
 			{ name: 'Angular', icon: 'angular' },
+			{ name: 'React', icon: 'react' },
 		],
 	},
 	{
@@ -32,13 +34,22 @@ export const skills: SkillGroup[] = [
 		],
 	},
 	{
-		group: 'Arquitectura, Cloud & DevOps',
+		group: 'Testing & Calidad',
 		items: [
-			{ name: 'Arquitectura de Software', icon: 'architecture' },
+			{ name: 'JUnit', icon: 'junit' },
+			{ name: 'Mockito' },
+			{ name: 'Postman', icon: 'postman' },
+			{ name: 'SonarQube', icon: 'sonarqube' },
+		],
+	},
+	{
+		group: 'Mensajería, Cloud & DevOps',
+		items: [
+			{ name: 'Apache Kafka', icon: 'apachekafka' },
 			{ name: 'AWS', icon: 'aws' },
+			{ name: 'Maven', icon: 'maven' },
 			{ name: 'Git', icon: 'git' },
 			{ name: 'Scrum', icon: 'scrum' },
-			{ name: 'PMBOK', icon: 'pmbok' },
 		],
 	},
 ];
@@ -55,6 +66,7 @@ export const techIconMap: Record<string, string> = {
 	// puntual, no en "02. Stack técnico"), pero sí necesitan ícono para las
 	// tarjetas de experiencia donde se mencionan.
 	React: 'react',
+	'Apache Kafka': 'apachekafka',
 	CodeIgniter: 'codeigniter',
 	Bootstrap: 'bootstrap',
 	jQuery: 'jquery',
